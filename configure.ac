@@ -13,10 +13,15 @@ AC_PROG_CXX
 AC_PROG_CC
 
 # Checks for libraries.
+PKG_CHECK_MODULES([THRIFT], [thrift >= 0.4.0])
+BOOST_REQUIRE(1.34)
 
 # Checks for header files.
 
 # Checks for typedefs, structures, and compiler characteristics.
+AC_SUBST([THRIFT_CFLAGS])
+AC_SUBST([THRIFT_LIBS])
+
 AC_HEADER_STDBOOL
 AC_TYPE_INT16_T
 AC_TYPE_INT32_T
