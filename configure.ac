@@ -31,5 +31,5 @@ AC_TYPE_UINT32_T
 AC_TYPE_UINT8_T
 
 # Checks for library functions.
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile cassandra.pc])
 AC_OUTPUT
