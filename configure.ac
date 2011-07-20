@@ -1,5 +1,5 @@
 AC_PREREQ([2.67])
-AC_INIT([cassandra_thrift], [19.10.0])
+AC_INIT([cassandra_thrift], [0.8.1])
 AC_CONFIG_AUX_DIR([build])
 AC_PREFIX_DEFAULT([/usr])
 AM_INIT_AUTOMAKE([-Wall foreign no-define])
