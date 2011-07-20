@@ -1,6 +1,6 @@
 prefix = /usr
 ACLOCAL_AMFLAGS = -I m4
-AM_CPPFLAGS = @THRIFT_CFLAGS@
+AM_CPPFLAGS = -I$(srcdir)/src @THRIFT_CFLAGS@
 AM_LDFLAGS = @THRIFT_LIBS@
 
 pkgconfigdir = $(libdir)/pkgconfig
