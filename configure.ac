@@ -4,7 +4,7 @@ AC_CONFIG_AUX_DIR([build])
 AC_PREFIX_DEFAULT([/usr])
 AM_INIT_AUTOMAKE([-Wall foreign no-define])
 
-AC_CONFIG_SRCDIR([Cassandra.h])
+AC_CONFIG_SRCDIR([src/Cassandra.h])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 LT_INIT

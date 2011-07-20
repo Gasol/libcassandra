@@ -252,17 +252,17 @@ AM_LDFLAGS = @THRIFT_LIBS@
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = cassandra.pc
 lib_LTLIBRARIES = libcassandra_thrift.la
-include_cassandra_HEADERS = Cassandra.h \
-		  cassandra_constants.h \
-		  cassandra_types.h
+include_cassandra_HEADERS = src/Cassandra.h \
+			    src/cassandra_constants.h \
+			    src/cassandra_types.h
 
 include_cassandradir = $(includedir)/cassandra
-libcassandra_thrift_la_SOURCES = Cassandra.cpp \
-				Cassandra.h \
-				cassandra_constants.cpp \
-				cassandra_constants.h \
-				cassandra_types.cpp \
-				cassandra_types.h
+libcassandra_thrift_la_SOURCES = src/Cassandra.cpp \
+				 src/Cassandra.h \
+				 src/cassandra_constants.cpp \
+				 src/cassandra_constants.h \
+				 src/cassandra_types.cpp \
+				 src/cassandra_types.h
 
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
@@ -386,6 +386,27 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(LTCXXCOMPILE) -c -o $@ $<
+
+Cassandra.lo: src/Cassandra.cpp
+@am__fastdepCXX_TRUE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT Cassandra.lo -MD -MP -MF $(DEPDIR)/Cassandra.Tpo -c -o Cassandra.lo `test -f 'src/Cassandra.cpp' || echo '$(srcdir)/'`src/Cassandra.cpp
+@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/Cassandra.Tpo $(DEPDIR)/Cassandra.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/Cassandra.cpp' object='Cassandra.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o Cassandra.lo `test -f 'src/Cassandra.cpp' || echo '$(srcdir)/'`src/Cassandra.cpp
+
+cassandra_constants.lo: src/cassandra_constants.cpp
+@am__fastdepCXX_TRUE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT cassandra_constants.lo -MD -MP -MF $(DEPDIR)/cassandra_constants.Tpo -c -o cassandra_constants.lo `test -f 'src/cassandra_constants.cpp' || echo '$(srcdir)/'`src/cassandra_constants.cpp
+@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/cassandra_constants.Tpo $(DEPDIR)/cassandra_constants.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/cassandra_constants.cpp' object='cassandra_constants.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o cassandra_constants.lo `test -f 'src/cassandra_constants.cpp' || echo '$(srcdir)/'`src/cassandra_constants.cpp
+
+cassandra_types.lo: src/cassandra_types.cpp
+@am__fastdepCXX_TRUE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT cassandra_types.lo -MD -MP -MF $(DEPDIR)/cassandra_types.Tpo -c -o cassandra_types.lo `test -f 'src/cassandra_types.cpp' || echo '$(srcdir)/'`src/cassandra_types.cpp
+@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/cassandra_types.Tpo $(DEPDIR)/cassandra_types.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/cassandra_types.cpp' object='cassandra_types.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o cassandra_types.lo `test -f 'src/cassandra_types.cpp' || echo '$(srcdir)/'`src/cassandra_types.cpp
 
 mostlyclean-libtool:
 	-rm -f *.lo

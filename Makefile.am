@@ -8,17 +8,17 @@ pkgconfig_DATA = cassandra.pc
 
 lib_LTLIBRARIES = libcassandra_thrift.la
 
-include_cassandra_HEADERS = Cassandra.h \
-		  cassandra_constants.h \
-		  cassandra_types.h
+include_cassandra_HEADERS = src/Cassandra.h \
+			    src/cassandra_constants.h \
+			    src/cassandra_types.h
 
 include_cassandradir = $(includedir)/cassandra
 
-libcassandra_thrift_la_SOURCES = Cassandra.cpp \
-				Cassandra.h \
-				cassandra_constants.cpp \
-				cassandra_constants.h \
-				cassandra_types.cpp \
-				cassandra_types.h
+libcassandra_thrift_la_SOURCES = src/Cassandra.cpp \
+				 src/Cassandra.h \
+				 src/cassandra_constants.cpp \
+				 src/cassandra_constants.h \
+				 src/cassandra_types.cpp \
+				 src/cassandra_types.h
 
 #EXTRA_DIST = cassandra.pc.in

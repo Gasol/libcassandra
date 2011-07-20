@@ -704,7 +704,7 @@ PACKAGE_BUGREPORT=''
 PACKAGE_URL=''
 
 ac_default_prefix=/usr
-ac_unique_file="Cassandra.h"
+ac_unique_file="src/Cassandra.h"
 # Factoring default headers for most tests.
 ac_includes_default="\
 #include <stdio.h>
