@@ -20,5 +20,3 @@ libcassandra_la_SOURCES = src/Cassandra.cpp \
 				 src/cassandra_constants.h \
 				 src/cassandra_types.cpp \
 				 src/cassandra_types.h
-
-#EXTRA_DIST = cassandra.pc.in
