@@ -6,5 +6,5 @@ includedir=@includedir@
 Name: libcassandra
 Description: Cassandra Thrift C++ Binding
 Version: @VERSION@
-Libs: -L${libdir} -lcassandra_thrift
+Libs: -L${libdir} -lcassandra
 Cflags: -I${includedir}/cassandra
