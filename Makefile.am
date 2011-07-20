@@ -6,7 +6,7 @@ AM_LDFLAGS = @THRIFT_LIBS@
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = cassandra.pc
 
-lib_LTLIBRARIES = libcassandra_thrift.la
+lib_LTLIBRARIES = libcassandra.la
 
 include_cassandra_HEADERS = src/Cassandra.h \
 			    src/cassandra_constants.h \
@@ -14,7 +14,7 @@ include_cassandra_HEADERS = src/Cassandra.h \
 
 include_cassandradir = $(includedir)/cassandra
 
-libcassandra_thrift_la_SOURCES = src/Cassandra.cpp \
+libcassandra_la_SOURCES = src/Cassandra.cpp \
 				 src/Cassandra.h \
 				 src/cassandra_constants.cpp \
 				 src/cassandra_constants.h \

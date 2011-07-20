@@ -79,10 +79,10 @@ am__base_list = \
 am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkgconfigdir)" \
 	"$(DESTDIR)$(include_cassandradir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
-libcassandra_thrift_la_LIBADD =
-am_libcassandra_thrift_la_OBJECTS = Cassandra.lo \
-	cassandra_constants.lo cassandra_types.lo
-libcassandra_thrift_la_OBJECTS = $(am_libcassandra_thrift_la_OBJECTS)
+libcassandra_la_LIBADD =
+am_libcassandra_la_OBJECTS = Cassandra.lo cassandra_constants.lo \
+	cassandra_types.lo
+libcassandra_la_OBJECTS = $(am_libcassandra_la_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/build/depcomp
 am__depfiles_maybe = depfiles
@@ -105,8 +105,8 @@ CCLD = $(CC)
 LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
-SOURCES = $(libcassandra_thrift_la_SOURCES)
-DIST_SOURCES = $(libcassandra_thrift_la_SOURCES)
+SOURCES = $(libcassandra_la_SOURCES)
+DIST_SOURCES = $(libcassandra_la_SOURCES)
 DATA = $(pkgconfig_DATA)
 HEADERS = $(include_cassandra_HEADERS)
 ETAGS = etags
@@ -251,13 +251,13 @@ AM_CPPFLAGS = -I$(srcdir)/src @THRIFT_CFLAGS@
 AM_LDFLAGS = @THRIFT_LIBS@
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = cassandra.pc
-lib_LTLIBRARIES = libcassandra_thrift.la
+lib_LTLIBRARIES = libcassandra.la
 include_cassandra_HEADERS = src/Cassandra.h \
 			    src/cassandra_constants.h \
 			    src/cassandra_types.h
 
 include_cassandradir = $(includedir)/cassandra
-libcassandra_thrift_la_SOURCES = src/Cassandra.cpp \
+libcassandra_la_SOURCES = src/Cassandra.cpp \
 				 src/Cassandra.h \
 				 src/cassandra_constants.cpp \
 				 src/cassandra_constants.h \
@@ -353,8 +353,8 @@ clean-libLTLIBRARIES:
 	  echo "rm -f \"$${dir}/so_locations\""; \
 	  rm -f "$${dir}/so_locations"; \
 	done
-libcassandra_thrift.la: $(libcassandra_thrift_la_OBJECTS) $(libcassandra_thrift_la_DEPENDENCIES) 
-	$(CXXLINK) -rpath $(libdir) $(libcassandra_thrift_la_OBJECTS) $(libcassandra_thrift_la_LIBADD) $(LIBS)
+libcassandra.la: $(libcassandra_la_OBJECTS) $(libcassandra_la_DEPENDENCIES) 
+	$(CXXLINK) -rpath $(libdir) $(libcassandra_la_OBJECTS) $(libcassandra_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
