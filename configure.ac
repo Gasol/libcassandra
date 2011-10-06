@@ -16,6 +16,7 @@ AC_PROG_CC
 # Checks for libraries.
 PKG_CHECK_MODULES([THRIFT], [thrift >= 0.4.0])
 BOOST_REQUIRE(1.34)
+BOOST_SMART_PTR
 
 # Checks for header files.
 

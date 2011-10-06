@@ -1,6 +1,6 @@
 prefix = /usr
 ACLOCAL_AMFLAGS = -I m4
-AM_CPPFLAGS = -I$(srcdir)/src @THRIFT_CFLAGS@
+AM_CPPFLAGS = -I$(srcdir)/src @THRIFT_CFLAGS@ $(BOOST_CPPFLAGS)
 AM_LDFLAGS = @THRIFT_LIBS@
 
 pkgconfigdir = $(libdir)/pkgconfig
@@ -15,8 +15,8 @@ include_cassandra_HEADERS = src/Cassandra.h \
 include_cassandradir = $(includedir)/cassandra
 
 libcassandra_la_SOURCES = src/Cassandra.cpp \
-				 src/Cassandra.h \
-				 src/cassandra_constants.cpp \
-				 src/cassandra_constants.h \
-				 src/cassandra_types.cpp \
-				 src/cassandra_types.h
+			  src/Cassandra.h \
+			  src/cassandra_constants.cpp \
+			  src/cassandra_constants.h \
+			  src/cassandra_types.cpp \
+			  src/cassandra_types.h
