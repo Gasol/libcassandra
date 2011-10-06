@@ -960,12 +960,16 @@ class Mutation {
 
 };
 
+typedef struct _TokenRange__isset {
+  _TokenRange__isset() : rpc_endpoints(false) {}
+  bool rpc_endpoints;
+} _TokenRange__isset;
 
 class TokenRange {
  public:
 
-  static const char* ascii_fingerprint; // = "8E2AD6401E83558ECFD6A13D74DD0A3F";
-  static const uint8_t binary_fingerprint[16]; // = {0x8E,0x2A,0xD6,0x40,0x1E,0x83,0x55,0x8E,0xCF,0xD6,0xA1,0x3D,0x74,0xDD,0x0A,0x3F};
+  static const char* ascii_fingerprint; // = "7DAB3420A3B97C1E96C2F37EB7EB300F";
+  static const uint8_t binary_fingerprint[16]; // = {0x7D,0xAB,0x34,0x20,0xA3,0xB9,0x7C,0x1E,0x96,0xC2,0xF3,0x7E,0xB7,0xEB,0x30,0x0F};
 
   TokenRange() : start_token(""), end_token("") {
   }
@@ -975,6 +979,9 @@ class TokenRange {
   std::string start_token;
   std::string end_token;
   std::vector<std::string>  endpoints;
+  std::vector<std::string>  rpc_endpoints;
+
+  _TokenRange__isset __isset;
 
   bool operator == (const TokenRange & rhs) const
   {
@@ -983,6 +990,10 @@ class TokenRange {
     if (!(end_token == rhs.end_token))
       return false;
     if (!(endpoints == rhs.endpoints))
+      return false;
+    if (__isset.rpc_endpoints != rhs.__isset.rpc_endpoints)
+      return false;
+    else if (__isset.rpc_endpoints && !(rpc_endpoints == rhs.rpc_endpoints))
       return false;
     return true;
   }
