@@ -1,5 +1,5 @@
 libcassandra (0.8.6-1) unstable; urgency=low
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial release
 
  -- Gasol Wu <gasol.wu@gmail.com>  Tue, 11 Oct 2011 04:46:08 +0000
